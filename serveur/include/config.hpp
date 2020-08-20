@@ -17,4 +17,6 @@
 using namespace std;
 using namespace rsc;
 
+#define FIELD_SIZE 8
+
 #endif

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tiles/Titre.png" type="Texture" id=1]
+[ext_resource path="res://Menu/buttons/ConnectButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Menu/buttons/OptionsButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/buttons/TestReseauButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FadeIn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Menu/ControlMenu.gd" type="Script" id=7]
+
+[node name="ControlMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
+[node name="Menu" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_left = 20.0
+margin_top = 12.0
+margin_right = 300.0
+margin_bottom = 168.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Titre" type="TextureRect" parent="Menu/VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 60.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/VBoxContainer"]
+margin_left = 90.0
+margin_top = 80.0
+margin_right = 190.0
+margin_bottom = 156.0
+size_flags_horizontal = 4
+custom_constants/separation = 8
+
+[node name="ConnectButton" parent="Menu/VBoxContainer/Buttons" instance=ExtResource( 2 )]
+
+[node name="OptionsButton" parent="Menu/VBoxContainer/Buttons" instance=ExtResource( 3 )]
+margin_top = 28.0
+margin_bottom = 48.0
+
+[node name="TestReseauButton" parent="Menu/VBoxContainer/Buttons" instance=ExtResource( 4 )]
+margin_top = 56.0
+margin_bottom = 76.0
+
+[node name="FadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
+[connection signal="pressed" from="Menu/VBoxContainer/Buttons/ConnectButton" to="." method="_on_ConnectButton_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Buttons/TestReseauButton" to="." method="_on_TestReseauButton_pressed"]
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
+[connection signal="fade_out_finished" from="FadeIn" to="." method="_on_FadeIn_fade_out_finished"]

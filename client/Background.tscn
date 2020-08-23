@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game/World/field_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://tiles/circle.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.120455 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 170, 100, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 69.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.506329, 0.143182 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 170, 5, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 69.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 5 )
+
+[node name="Background" type="YSort"]
+position = Vector2( 10, 5 )
+scale = Vector2( 0.95, 0.95 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -5.0
+margin_right = 330.0
+margin_bottom = 195.0
+color = Color( 0.172549, 0, 0.172549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles2D" type="Particles2D" parent="ColorRect"]
+position = Vector2( 160, 110 )
+scale = Vector2( 1, 1 )
+amount = 100
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 524288, 1, 1, 524290, 2, 1, 524289, 3, 1, 524289, 4, 1, 524290, 5, 1, 524289, 6, 1, 524289, 7, 1, 524290, 8, 1, 524290, 9, 1, 524291, 65536, 1, 589824, 65537, 1, 589826, 65538, 1, 589826, 65539, 1, 589826, 65540, 1, 589825, 65541, 1, 589825, 65542, 1, 589825, 65543, 1, 589825, 65544, 1, 589826, 65545, 1, 589827, 131072, 1, 589824, 131073, 1, 589825, 131074, 1, 589826, 131075, 1, 589826, 131076, 1, 589826, 131077, 1, 589826, 131078, 1, 589826, 131079, 1, 589825, 131080, 1, 589826, 131081, 1, 589827, 196608, 1, 655360, 196609, 1, 655362, 196610, 1, 655362, 196611, 1, 655362, 196612, 1, 655362, 196613, 1, 655362, 196614, 1, 655361, 196615, 1, 655361, 196616, 1, 655361, 196617, 1, 655363, 262144, 0, 0, 262145, 0, 2, 262146, 0, 1, 262147, 0, 2, 262148, 0, 2, 262149, 0, 2, 262150, 0, 2, 262151, 0, 1, 262152, 0, 1, 262153, 0, 3, 327680, 0, 65536, 327681, 0, 65538, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65538, 327685, 0, 65538, 327686, 0, 65537, 327687, 0, 65538, 327688, 0, 65538, 327689, 0, 65539 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1, 12, 131073, 2, 12, 131073, 3, 9, 196611, 4, 12, 1, 5, 12, 3, 6, 12, 2, 7, 9, 131072, 65541, 9, 262147, 131073, 9, 131072, 131074, 12, 65536, 131075, 9, 262146, 131077, 12, 131072, 131078, 12, 131072, 131079, 9, 131072 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131065, 6, 0, 0, 6, 0, 2, 13, 0, 7, 7, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 160, 200 )
+scale = Vector2( 1, 1 )
+amount = 10
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )

@@ -6,7 +6,10 @@
 class Farmer : public Player
 {
     protected:
-        int money;
+        int money;      // l'argent que possède le fermier
+        int stock;      // le stock de blé que possède le fermier
+
+        int score;      // score du joueur
     
     public:
         Farmer();
@@ -15,11 +18,16 @@ class Farmer : public Player
         Farmer& operator=(const Farmer& f);
 
         /* Accesseurs */
-        int& getMoney() const;
+
+        const int& getMoney() const;
+        const int& getStock() const;
+        const int& getScore() const;
 
         /* Methodes */
-        void spend_money(int amount);
-        void receive_money(int amount);
+
+        void spend_money(u_int amount);
+        void receive_money(u_int amount);
+        void add_points(u_int amount);
 };
 
 #endif

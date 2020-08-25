@@ -12,6 +12,14 @@ class HFF : public Game
     public:
         HFF();
         ~HFF();
+
+        /* Accesseurs */
+
+        /* Methodes */
+
+        /* Methode de rsc::Game */
+        
+        void handleIncomingMessage();
 };
 
 #endif

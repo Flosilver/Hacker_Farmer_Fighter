@@ -1,0 +1,43 @@
+@startuml
+
+class HFF{
+    # fields : vector<sp_Field>[4]
+    # players : vector<sp_Farmer>[4]
+
+    + HFF()
+    + ~HFF()
+
+    + handleIncomingMessage(): void
+}
+
+class Farmer{
+    # money: int
+    # stock: int
+    # score: int
+
+    + Farmer()
+    + ~Farmer()
+    + operator=(f : const Farmer&): Farmer&
+
+    + getMoney(): const int&
+    + getStock(): const int&
+    + getScore(): const int&
+
+    + spend_money(amount: u_int): void
+    + receive_money(amount: u_int): void
+    + add_points(amount: u_int): void
+}
+
+class Field{
+    # map: int[][]
+
+    + Field()
+    + ~Field()
+    + operator(f: const Field&): Field&
+
+    + getCase(): int
+
+    + print(): void
+}
+
+@enduml

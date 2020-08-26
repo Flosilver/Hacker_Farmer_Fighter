@@ -3,6 +3,8 @@
 
 #include "config.hpp"
 
+typedef shared_ptr<Farmer> sp_Farmer;
+
 class Farmer : public Player
 {
     protected:

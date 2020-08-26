@@ -17,6 +17,8 @@
 using namespace std;
 using namespace rsc;
 
+#define NB_J_MAX 4
+
 #define FIELD_SIZE 8
 
 #endif

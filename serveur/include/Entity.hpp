@@ -4,7 +4,7 @@
 #include "config.hpp"
 //#include "Field.hpp"
 
-enum entity_t{CROP, WELLS, TRUCK, SILO};
+enum entity_t{NONE, CROP, WELLS, TRUCK, SILO};
 typedef shared_ptr<Entity> sp_Entity;
 
 class Entity
@@ -16,7 +16,7 @@ class Entity
         int hp;
         int score_points;
 
-        Entity(int type);
+        Entity(int aType);
     
     public:
         Entity();
@@ -26,14 +26,8 @@ class Entity
 
         /* Accesseurs */
         
-        /**
-         * Retourne la position de l'entité (top-left corner).
-         * */
         const Vect2i& getPos() const;
-        void setPos();
-        /**
-         * Retourne la taille de l'entité.
-         * */
+        void setPos(const Vect2i& v);
         const Vect2i& getSize() const;
         const int& getType() const;
 

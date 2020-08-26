@@ -23,11 +23,13 @@ class Field
         /* Accesseurs */
 
         sp_Entity getCase(int i, int j) const;
+        int getCaseType(int i, int j) const;
 
         /* Methodes */
 
         void print() const;
-        void place_entity(sp_Entity spe, int i, int j);
+        bool can_be_placed(sp_Entity spe, int i, int j) const;
+        int place_entity(sp_Entity spe, int i, int j);
 };
 
 #endif

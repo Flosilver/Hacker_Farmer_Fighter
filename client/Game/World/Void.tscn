@@ -9,9 +9,6 @@ margin_top = -172.0
 margin_right = 478.0
 margin_bottom = 428.0
 color = Color( 0.129412, 0, 0.172549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 350, 300 )

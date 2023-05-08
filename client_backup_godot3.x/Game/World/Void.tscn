@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tiles/circle.png" type="Texture" id=1]
+[ext_resource path="res://Game/World/Void_particules.tres" type="Material" id=2]
+
+[node name="Void" type="ColorRect"]
+margin_left = -222.0
+margin_top = -172.0
+margin_right = 478.0
+margin_bottom = 428.0
+color = Color( 0.129412, 0, 0.172549, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 350, 300 )
+amount = 200
+process_material = ExtResource( 2 )
+texture = ExtResource( 1 )

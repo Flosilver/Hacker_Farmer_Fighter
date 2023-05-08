@@ -11,9 +11,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" parent="." instance=ExtResource( 6 )]
 
@@ -61,10 +58,10 @@ margin_top = 95.0
 margin_right = 280.0
 margin_bottom = 168.0
 size_flags_vertical = 3
-custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 2
+custom_fonts/font = ExtResource( 1 )
 text = "
 
 version: beta 1.0
@@ -73,6 +70,7 @@ align = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 5 )]
 visible = false
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
 [connection signal="fade_out_finished" from="FadeIn" to="." method="_on_FadeIn_fade_out_finished"]

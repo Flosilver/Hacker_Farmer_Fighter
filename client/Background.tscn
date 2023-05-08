@@ -55,7 +55,6 @@ __meta__ = {
 
 [node name="Particles2D" type="Particles2D" parent="ColorRect"]
 position = Vector2( 160, 110 )
-scale = Vector2( 1, 1 )
 amount = 100
 process_material = SubResource( 3 )
 texture = ExtResource( 2 )
@@ -83,7 +82,6 @@ __meta__ = {
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 position = Vector2( 160, 200 )
-scale = Vector2( 1, 1 )
 amount = 10
 process_material = SubResource( 6 )
 texture = ExtResource( 2 )

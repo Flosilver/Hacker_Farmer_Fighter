@@ -45,3 +45,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
